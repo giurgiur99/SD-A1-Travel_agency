@@ -1,0 +1,28 @@
+create table packages
+(
+	id int auto_increment
+		primary key,
+	userid int not null,
+	name varchar(255) not null,
+	destination varchar(255) null,
+	price int not null,
+	startDate date not null,
+	endDate date not null,
+	extraDetails varchar(255) null,
+	spots int not null,
+	constraint packages_name_uindex
+		unique (name),
+	constraint packages_userid_uindex
+		unique (userid)
+);
+
+create table users
+(
+	id int auto_increment
+		primary key,
+	username varchar(255) not null,
+	password varchar(255) not null,
+	constraint users_username_uindex
+		unique (username)
+);
+
